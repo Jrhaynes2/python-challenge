@@ -4,7 +4,7 @@ import csv
 # Path to the CSV file
 csv_file_path = os.path.join("..", "resources", "election_data.csv")
 
-# Initialize variables
+#set variables
 total_votes = 0
 candidate_votes = {}
 winning_candidate = 0
@@ -16,11 +16,11 @@ with open(csv_file_path, 'r') as csvfile:
     header = next(csvreader)
 
     for row in csvreader:
-        #total votes and candidate list
+        # total votes and candidate list
         total_votes += 1
         candidates = row[2]
         
-        # Increment the candidate's vote count
+        # tally the vote count
         if candidates in candidate_votes:
             candidate_votes[candidates] += 1
         else:
